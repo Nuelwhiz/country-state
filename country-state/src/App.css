@@ -55,6 +55,7 @@
   margin-block: 40px;
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .state-erro {
   margin-top: 10px;
