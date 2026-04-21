@@ -6,7 +6,6 @@ function App() {
   const [country, setCountry] = useState("");
 
   const [state, setState] = useState("");
-  const [erro, setErro] = useState("");
 
   function triggerCountry(e) {
     setCountry(e.target.value);
@@ -14,23 +13,7 @@ function App() {
   function triggerState(e) {
     setState(e.target.value);
   }
-  function done(e) {
-    e.preventDefault();
-    if (!country && !state) {
-      setErro("please fill before submiting");
-    } else if (!state) {
-      setErro("please select state");
-    } else {
-      setErro("");
-      console.log("country:", country);
-      console.log("state:", state);
-      setCountry(state);
-      if (country && state) {
-      }
-      setCountry("");
-      setState("");
-    }
-  }
+
   //useeffect practice
   useEffect(() => {
     if (state) {
@@ -76,17 +59,6 @@ function App() {
               }
             </select>
           </div>
-        </div>
-
-        <div>
-          {erro && (
-            <p className="state-erro" style={{ color: "red" }}>
-              {erro}
-            </p>
-          )}
-          <button className="done" onClick={done}>
-            Done
-          </button>
         </div>
       </main>
     </>
