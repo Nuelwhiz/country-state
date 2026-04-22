@@ -13,6 +13,16 @@ function App() {
   function triggerState(e) {
     setState(e.target.value);
   }
+  const countryOptionb =
+    Countries &&
+    Object.keys(Countries)?.map((countryData) => (
+      <option value={countryData} key={countryData}>
+        {countryData}
+      </option>
+    ));
+  const stateOption = Countries[country]?.map((stateData) => (
+    <option key={stateData}>{stateData}</option>
+  ));
 
   //useeffect practice
   useEffect(() => {
@@ -32,12 +42,7 @@ function App() {
               id=""
             >
               <option value="select">select country</option>
-              {Countries &&
-                Object.keys(Countries)?.map((countryData) => (
-                  <option value={countryData} key={countryData}>
-                    {countryData}
-                  </option>
-                ))}
+              {countryOptionb}
             </select>
           </div>
 
@@ -49,13 +54,11 @@ function App() {
               id=""
             >
               <option value="">select state</option>
+
               {
                 /* Countries &&
                   country && */
-
-                Countries[country]?.map((stateData) => (
-                  <option key={stateData}>{stateData}</option>
-                ))
+                stateOption
               }
             </select>
           </div>
