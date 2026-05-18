@@ -62,6 +62,13 @@ function App() {
               }
             </select>
           </div>
+          <button
+            onClick={() => {
+              console.log("country:", country, "state:", state);
+            }}
+          >
+            done
+          </button>
         </div>
       </main>
     </>
